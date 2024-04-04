@@ -1,15 +1,23 @@
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 import mongoose from "mongoose";
 
-dotenv.config()
+dotenv.config();
 
-const DB_URL = process.env.DB_URL
+const DB_URL = process.env.DB_URL;
 
-mongoose.connect(DB_URL)
-.then(() => {
-    console.log('Database Connected Successfully.')
+mongoose.connect(DB_URL, {
+
+  dbName: 'reactnodeauth'
+  
+}).then(() => {
+
+  console.log('Database Connected Successfully.');
+
 }).catch((error) => {
-    console.log(Error)
-})
+
+  console.error('Error connecting to database:', error);
+
+});
 
 export default mongoose;
+
