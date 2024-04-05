@@ -3,8 +3,12 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import google from '../google.png'
 import { useGoogleLogin } from '@react-oauth/google'
+import Header from "./Header";
+import CustomPageTitle from "./CustomPageTitle";
 
 const Login = () => {
+
+    const title = "Login";
 
     const navigate = useNavigate()
 
@@ -179,7 +183,8 @@ const Login = () => {
 
     return ( 
         <div className="home">
-            <h2 style={{ textAlign: "center" }}>Authentication System</h2>
+            <CustomPageTitle title="Authentication System - Login"/>
+            <Header title={title}/>
             
             { warning && <div className="warning">{warningmessage}</div> }
             { success && <div className="success">{successmessage}</div> }

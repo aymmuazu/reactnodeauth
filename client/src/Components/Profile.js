@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 const EditProfile = () => {
+
+    const title = "Profile";
 
     const navigate = useNavigate();
 
@@ -99,7 +102,7 @@ const EditProfile = () => {
     }else{
         return ( 
             <div className="home">
-                <h2 style={{ textAlign: "center" }}>Authentication System</h2>
+                <Header title={title}/>
                 <div className="box">
                     {userData ? (
 

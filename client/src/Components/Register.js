@@ -1,8 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 const Register = () => {
+
+    const title = "Register";
 
     const navigate = useNavigate();
 
@@ -74,7 +77,7 @@ const Register = () => {
 
     return ( 
         <div className="home">
-            <h2 style={{ textAlign: "center" }}>Authentication System</h2>
+            <Header title={title} />
             
             { warning && <div className="warning">{warningmessage}</div> }
             { success && <div className="success">{successmessage}</div> }

@@ -2,8 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import QRCode from "qrcode.react";
+import Header from "./Header";
 
 const Dashboard = () => {
+
+    const title = "User";
 
     const navigate = useNavigate()
     
@@ -125,7 +128,7 @@ const Dashboard = () => {
     }else{
         return (
             <div className="home">
-                <h2 style={{ textAlign: "center" }}>Authentication System</h2>
+                <Header title={title} />
                 <div className="box">
                     {userData ? (
 
